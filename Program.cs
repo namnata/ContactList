@@ -10,12 +10,10 @@ namespace ContactList
         public static List<Person> People = new List<Person>();
         static void Main(string[] args)
         {
-
             string command = "";
 
             while (command != "exit")
             {
-                //Console.Clear();
                 Console.WriteLine("==== Natalya's Contact List ====");
                 Console.WriteLine("\n Please enter command (add, remove, display, update, find):");
 
@@ -37,16 +35,11 @@ namespace ContactList
                         break;
                     case "find":
                         FindContact();
-                        break;
-                    
+                        break;    
                 }
             }
-
-
-
         }
-
-      
+        
         private static Person FindContact()
         {
             Console.WriteLine("Enter the first name of the person you want to find in the contact list");
@@ -59,17 +52,14 @@ namespace ContactList
                 Console.ReadKey();
                 return null;
             }
-            else {
+            else 
+            {
                 Console.WriteLine("Person is found!");
-                PrintPerson(person);
-                
+                PrintPerson(person);    
             }
-            return person;
 
-           
-                       }
-
-
+            return person; 
+        }
 
         private static void DisplayPeople()
         {
@@ -80,6 +70,7 @@ namespace ContactList
                 return;
             }
             Console.WriteLine("Here are the current people in your contact list:\n");
+            
             foreach (var person in People)
             {
                 PrintPerson(person);
@@ -102,6 +93,7 @@ namespace ContactList
                 return;
 
             }
+
             {
                 Console.WriteLine("Are you sure you want to remove this person from the list?");
                 PrintPerson(person);
@@ -114,9 +106,7 @@ namespace ContactList
 
                 }
             }
-
         }
-
 
         private static void PrintPerson(Person person)
         {
@@ -126,9 +116,7 @@ namespace ContactList
             Console.WriteLine("Email: " + person.Email);
             Console.WriteLine("-------------------");
 
-
         }
-
 
         private static void AddPerson()
         {
@@ -201,11 +189,7 @@ namespace ContactList
                     Console.WriteLine(person);
 
                 }
-
-
             }
-
-
         }
     }
 
@@ -233,9 +217,4 @@ namespace ContactList
             return $"First name: {this.FirstName},\nLast name: {this.LastName},\nPhoneNumber: {this.PhoneNumber},\nEmail: {this.Email}\n";
         }
     }
-
-
 }
-
-
-
